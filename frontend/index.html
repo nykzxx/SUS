@@ -10,10 +10,12 @@
     <main class="bg-slate-300 w-dvw h-dvh flex flex-col justify-center items-center gap-5">
         <section class="bg-slate-400 p-3 rounded-lg w-80">
             <h1 class="text-black font-black">PUXAR DADOS</h1>
-            <input type="text" name="hash" id="hash" class="bg-slate-500 rounded-xl pl-2" placeholder="Hash">
-            <button class="bg-slate-900 text-white rounded-2xl px-2">PUXAR</button>
+            <div class="flex flex-row place-content-between gap-2">
+                <input type="text" name="hash" id="hash" class="bg-slate-500 rounded-xl pl-2" placeholder="Hash">
+                <button class="bg-slate-900 text-white rounded-2xl px-2 w-full" onclick="showUI()">PUXAR</button>
+            </div>
         </section>
-        <section class="bg-slate-400 p-3 rounded-lg">
+        <section class="bg-slate-400 p-3 rounded-lg" id="container">
             <h2 class="text-black font-black">338087281405593 | Nicolas Nascimento</h2>
             <div>
                 <div class="flex flex-row place-content-between">
@@ -24,24 +26,26 @@
                 </div>
                     
                 <div class="flex flex-row place-content-between">
-                    <p>338087281405593</p>
-                    <p>Nicolas Nascimento</p>
+                    <p id="hash">338087281405593</p>
+                    <p id="name">Nicolas Nascimento</p>
                 </div>
                 
-                <h2 class="ext-black font-black">CPF</h2>
-                <p>80232334080</p>
-                <h2 class="ext-black font-black">GÊNERO</h2>
-                <p>Masculino</p>
-                <h2 class="ext-black font-black">ALTURA</h2>
-                <p>1.66</p>
-                <h2 class="ext-black font-black">PESO</h2>
-                <p>54</p>
-                <h2 class="ext-black font-black">DATA DE NASCIMENTO</h2>
-                <p>20/07/1967</p>
-                <h2 class="ext-black font-black">IDADE</h2>
-                <p>57</p>
+                <h2 class="text-black font-black">CPF</h2>
+                <p id="cpf">80232334080</p>
+                <h2 class="text-black font-black">GÊNERO</h2>
+                <p id="gender">Masculino</p>
+                <h2 class="text-black font-black">ALTURA</h2>
+                <p id="height">1.66</p>
+                <h2 class="text-black font-black">PESO</h2>
+                <p id="weight">54</p>
+                <h2 class="text-black font-black">DATA DE NASCIMENTO</h2>
+                <p id="birth">20/07/1967</p>
+                <h2 class="text-black font-black">IDADE</h2>
+                <p id="age">57</p>
             </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

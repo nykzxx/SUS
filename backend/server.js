@@ -2,11 +2,13 @@
 import express from 'express';
 import crypto from 'crypto';
 import fetch from 'node-fetch';
+import cors from 'cors';
 
 // Iniciando o Express.JS
 const server = express();
 const port = 3030;
 server.use(express.json());
+server.use(cors());
 
 // "Database"
 let users = [];
@@ -69,7 +71,11 @@ server.post('/api/users', async (req, res) => {
 // Consultar Usuarios
 server.get('/api/users/:hash', (req, res) => {
   let person = users.find(user => user.hash === req.params.hash);
-  res.status(200).send(person);
+  if (person){
+    res.status(200).send(person);
+  }else {
+    res.status(500).send('Usuario Invalido!')
+  }
 })
 
 server.listen(port, () => console.log(`✅ | Servidor rodando na porta ${port}`));
